@@ -3,8 +3,8 @@ import bodyParser from 'express'
 import  {urlDetails}  from './urlDetails.js'
 import shortid from 'shortid'
 const app= express()
-import axios from 'axios'
 import 'dotenv/config'
+import cors from 'cors'
 
 
 import pool from './server.js'
@@ -12,6 +12,7 @@ import pool from './server.js'
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({entend:false}))
 app.use(express.text());
+app.use(cors())
 
 
 
