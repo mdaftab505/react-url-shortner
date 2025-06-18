@@ -12,7 +12,23 @@ import pool from './server.js'
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({entend:false}))
 app.use(express.text());
-app.use(cors())
+
+const allowedOrigins = [
+  'http://localhost:5173',                     // Dev: Vite frontend
+  process.env.FRONTEND_URL                     // Prod: Set this on Vercel or your env
+];
+export const corsOptions = {
+  origin: (origin, callback) => {
+    // Allow requests with no origin like mobile apps or curl
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true // if you're using cookies or auth headers
+};
+app.use(cors(corsOptions));
 
 
 
