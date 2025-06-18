@@ -37,7 +37,7 @@ const [errorMessage, setErrorMessage] = useState(false)
     setError(false)
     setLoader(true)
 
-    const response= await fetch('/api', {
+    const response= await fetch(`${apiBaseUrl}/api`, {
       method:'POST',
       header: {
         'Content-Type': 'text/plain'
