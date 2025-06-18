@@ -8,7 +8,7 @@ import validator from 'validator'
 
 const App = ()=>{
 
-
+  const apiBaseUrl = import.meta.env.VITE_BACKEND_URL;
   const [url, seturl] = useState('')
   const [loader, setLoader]= useState(false)
   const [error, setError]= useState(false)
@@ -49,7 +49,9 @@ const [errorMessage, setErrorMessage] = useState(false)
     if(!response.ok){
       setError(true)
       setLoader(false)
+      console.log(error)
       throw new Error(`HTTP error status: ${response.status}`)
+
     }
     setLoader(false)
     const data= await response.json();
@@ -69,7 +71,7 @@ const [errorMessage, setErrorMessage] = useState(false)
         e.preventDefault()
 
 
-  window.open(`/api/${shorturl}`, '_blank');
+  window.open(`${apiBaseUrl}/api/${shorturl}`, '_blank');
 }
 
 
@@ -81,7 +83,7 @@ const generateQR = async(e)=>{
   
 
 
-    QRCode.toDataURL(`http://localhost:3000/api/${shorturl}`, function(err, url){
+    QRCode.toDataURL(`${apiBaseUrl}/api/${shorturl}`, function(err, url){
          setOpen(true)
        try{
           
@@ -175,7 +177,7 @@ const handleClose=()=> setOpen(false);
               <input
             type='text' 
             className='w-[100%] h-16 p-2.5 rounded-lg bg-white' 
-            value={`http://localhost:3000/api/${shorturl}`}
+            value={`${apiBaseUrl}/api/${shorturl}`}
             disabled/>
 
             <label  className='text-xl font-bold mb-2'>Original URL</label>
