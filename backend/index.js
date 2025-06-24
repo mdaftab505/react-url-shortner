@@ -70,7 +70,7 @@ app.get('/', (req,res)=>{
 app.post('/api', async (req, res) => {
 
    
-  const  longUrl  = req.body;
+  const  {longUrl}  = req.body;
 
   if (!longUrl) return res.status(400).json({ message: "longUrl is required" });
 
@@ -161,6 +161,8 @@ app.get('/api/:short', async(req, res)=>{
 //   }
     
 // })
+
+
 
 
 export default app;

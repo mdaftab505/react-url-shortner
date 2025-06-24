@@ -38,11 +38,10 @@ const [errorMessage, setErrorMessage] = useState(false)
     setLoader(true)
 
     const response= await fetch(`${apiBaseUrl}/api`, {
-      method:'POST',
-      header: {
-        'Content-Type': 'text/plain'
-      },
-      body:url
+     method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ longUrl: url })
+
 
     });
 
