@@ -3,6 +3,7 @@ import './App.css'
 import QRCode from 'qrcode'
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 import validator from 'validator'
+import Logo from "./assets/logo.png"
 
 
 
@@ -127,7 +128,7 @@ const handleClose=()=> setOpen(false);
 
        <div className=''>
         <header>
-           <img src="/src/assets/logo.png" className='h-32 w-40 m-[10px]'/>
+           <img src={Logo} className='h-32 w-40 m-[10px]'/>
         </header>
 
 
