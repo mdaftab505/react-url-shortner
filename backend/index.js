@@ -14,21 +14,27 @@ app.use(bodyParser.urlencoded({entend:false}))
 app.use(express.text());
 
 const allowedOrigins = [
-  'http://localhost:5173',                     // Dev: Vite frontend
-  process.env.FRONTEND_URL                     // Prod: Set this on Vercel or your env
+  'http://localhost:5173', // Dev: Vite frontend
+  'https://react-url-shortner-wk15.vercel.app' // Production frontend
 ];
+
 export const corsOptions = {
   origin: (origin, callback) => {
-    // Allow requests with no origin like mobile apps or curl
+    // Allow requests with no origin (e.g., curl, mobile apps)
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
+      console.error(`CORS blocked origin: ${origin}`);
       callback(new Error('Not allowed by CORS'));
     }
   },
-  credentials: true // if you're using cookies or auth headers
+  credentials: true
 };
+
 app.use(cors(corsOptions));
+
+
+
 
 
 
