@@ -15,7 +15,7 @@ app.use(express.text());
 
 const allowedOrigins = [
   'http://localhost:5173', // Dev: Vite frontend
-  'https://react-url-shortner-wk15.vercel.app' // Production frontend
+  'https://react-url-shortner-wk15.vercel.app/' // Production frontend
 ];
 
 export const corsOptions = {
