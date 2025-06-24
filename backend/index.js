@@ -14,9 +14,8 @@ app.use(bodyParser.urlencoded({entend:false}))
 app.use(express.text());
 
 const allowedOrigins = [
-  'http://localhost:5173', // Dev: Vite frontend
-      process.env.FRONTEND_URL // Production frontend
- 
+  'http://localhost:5173',
+  'https://react-url-shortner-wk15.vercel.app' // ✅ Add your deployed frontend origin
 ];
 
 
