@@ -15,7 +15,12 @@ app.use(express.text());
 
 const allowedOrigins = [
   'http://localhost:5173', // Dev: Vite frontend
+<<<<<<< HEAD
     process.env.FRONTEND_URL// Production frontend
+=======
+      process.env.FRONTEND_URL // Production frontend
+ 
+>>>>>>> origin/main
 ];
 
 export const corsOptions = {
@@ -162,8 +167,5 @@ app.get('/api/:short', async(req, res)=>{
 // })
 
 
-const port= process.env.PORT || 3000
+module.exports = app;
 
-app.listen(port, ()=>{
-    console.log(`server is running on port: ${port}`)
-})

@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "builds": [
     {
       "src": "./index.js",
@@ -12,4 +13,8 @@
       "dest": "index.js"
     }
   ]
+=======
+  "builds": [{ "src": "./index.js", "use": "@vercel/node" }],
+  "routes": [{ "src": "/(.*)", "dest": "index.js" }]
+>>>>>>> origin/main
 }
