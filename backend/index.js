@@ -15,7 +15,7 @@ app.use(express.text());
 
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://react-url-shortner-wk15.vercel.app' // ✅ Add your deployed frontend origin
+   process.env.FRONTEND_URL // ✅ Add your deployed frontend origin
 ];
 
 
