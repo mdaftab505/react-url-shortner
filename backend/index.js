@@ -61,7 +61,9 @@ app.use(cors(corsOptions));
 //   return res.send(JSON.stringify(sendData)); 
 // })
 
-
+app.get('/', (req,res)=>{
+      res.send({acitveStatus:true, error:false})
+})
 
 
 app.post('/api', async (req, res) => {
