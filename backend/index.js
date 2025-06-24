@@ -19,9 +19,10 @@ const allowedOrigins = [
  
 ];
 
-export const corsOptions = {
+
+
+const corsOptions = {
   origin: (origin, callback) => {
-    // Allow requests with no origin (e.g., curl, mobile apps)
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
@@ -33,6 +34,7 @@ export const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+
 
 
 
