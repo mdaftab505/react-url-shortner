@@ -127,7 +127,7 @@ const handleClose=()=> setOpen(false);
 
        <div className=''>
         <header>
-           <img src="../src/assets/logo.png" className='h-32 w-40 m-[10px]'/>
+           <img src="/src/assets/logo.png" className='h-32 w-40 m-[10px]'/>
         </header>
 
 
